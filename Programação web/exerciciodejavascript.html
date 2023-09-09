@@ -4,8 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>exercicio</title>
+    <style>
+        body{
+            background-image: linear-gradient(to right, rgb(63, 1, 63), rgb(211, 139, 211));
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+        main{
+            position: absolute;
+            background-color: white;
+            width: 500px;
+            height:300px;
+
+            left: 50%;
+            top: 30%;
+            transform: translate(-50%,-30%);
+            border-radius: 20px;
+        }
+        fieldset{
+            width: 300px;
+            height: 200px;
+            margin: auto;
+            background-color: white;
+            margin-top: 20px;
+        }
+        button{
+            margin-left: 38%;
+            height: 30px;
+            width: 130;
+            margin-top: 28px;
+        }
+    </style>
 </head>
 <body>
-    
+    <main>
+        <fieldset id="campo">
+            <legend id="legenda">Exercicios</legend>
+            <form action="" method="get" autocomplete="off">
+                <p>
+                    <label for="inome">Qual seu nome:</label>
+                    <input type="text" name="nome" id="inome" required placeholder="Digite um nome valido">
+
+                </p>
+                <p>
+                    <label for="iemail">Digite seu email</label>
+                    <input type="email" name="email" id="iemail" placeholder="Digite um email valido">
+                </p>
+                <button type="submit" onclick="formulario()">Enviar</button>
+            </form>
+        </fieldset>
+    </main>
+
+    <script>
+        function formulario(){
+            var nome = document.getElementById("inome").value;
+            var email = document.getElementById("iemail").value;
+            if(nome==""|| email==""){
+                document.getElementById("inome").style.border="2px solid red";
+                document.getElementById("iemail").style.border="2px solid red";
+                document.getElementById("legenda").style.color="red";
+                document.getElementById("campo").style.border="1px solid red";
+                alert("Digite corretamente");
+            }
+        }
+    </script>
 </body>
 </html>
